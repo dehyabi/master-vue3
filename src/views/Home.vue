@@ -7,9 +7,9 @@
 </template>
 
 <script setup lang="ts">
+import { computed, reactive, provide, ref } from "vue";
 import type { ToDoInterface } from "../models/data/ToDo";
 import ToDo from "@/components/ToDo.vue";
-import { computed, reactive } from "vue";
 
 const ToDoList: ToDoInterface[] = reactive([
   {
@@ -45,4 +45,7 @@ const toDosComplete = computed(() => {
 
   return countToDosComplete == all ? "[ All ToDos Complete ]" : "[ No ]";
 });
+
+const testCity = ref('Malang');
+provide('testCity', testCity);
 </script>
